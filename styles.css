@@ -47,7 +47,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 50vh;
+    height: 70vh;
     overflow: hidden;
 }
 
@@ -235,8 +235,17 @@ footer a:hover {
     }
 
     .slide {
-        background-position: center center;
-        background-size: cover;
+        display: none;
+        transform: none !important;
+        -webkit-transform: none !important;
+        transition: none !important;
+        -webkit-transition: none !important;
+    }
+
+    /* Only show the first slide */
+    .slide:first-child {
+        display: block;
+        opacity: 1;
     }
 
     .hero-content {
