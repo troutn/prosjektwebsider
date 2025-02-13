@@ -108,42 +108,6 @@
         </div>
     </footer>
 
-    <script>
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.toggle('fa-bars');
-            icon.classList.toggle('fa-times');
-        });
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            });
-        });
-
-        function slideShow() {
-            const slides = document.querySelectorAll('.slide');
-            let currentSlide = 0;
-
-            setInterval(() => {
-                slides[currentSlide].classList.remove('active');
-                slides[currentSlide].classList.add('previous');
-                currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.remove('previous');
-                slides[currentSlide].classList.add('active');
-            }, 5000);
-        }
-
-        // Call the function when the page loads
-        window.addEventListener('load', slideShow);
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html> 
