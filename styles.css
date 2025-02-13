@@ -47,7 +47,7 @@ body {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 65vh;
+    height: 50vh;
     overflow: hidden;
 }
 
@@ -231,15 +231,23 @@ footer a:hover {
 
     /* Hero Section Adjustments */
     .hero {
-        padding: 0 1rem;
-        height: 80vh;
+        height: 40vh;
     }
 
-    .hero h1 {
-        font-size: 2.5rem;
+    .slide {
+        background-position: center center;
+        background-size: cover;
     }
 
-    .hero p {
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
         font-size: 1rem;
     }
 
