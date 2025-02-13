@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finnmarksliv AS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="index.html">Finnmarksliv AS</a>
+            </div>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links">
+                <a href="#activities">Activities</a>
+                <a href="#packages">Packages</a>
+                <a href="#accommodation">Accommodation</a>
+                <a href="webshop.html">Webshop</a>
+                <a href="#corporate">Corporate/Groups</a>
+            </div>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61554323031265" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/finnmarksliv" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="language-select">EN</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="slideshow">
+                <div class="slide active" style="background-image: url('bilder/finnmarksliv/packraft.jpg');"></div>
+                <div class="slide" style="background-image: url('bilder/finnmarksliv/jakt.jpg');"></div>
+            </div>
+            <div class="hero-content">
+                <h1>Adventures<br>In Finnmark</h1>
+                <p>Experience the Arctic - Norway</p>
+            </div>
+        </section>
+
+        <section class="featured-activities">
+            <h2>Featured Activities</h2>
+            <div class="activity-grid">
+                <div class="activity-card" style="height: 500px;">
+                    <img src="bilder/finnmarksliv/jakt.jpg" alt="hunting trip" style="object-fit: cover; object-position: center center; height: 70%;">
+                    <div class="activity-content">
+                        <h3>Arctic Ski Expedition</h3>
+                        <p>Experience the fantastic Arctic wilderness</p>
+                        <div class="activity-details">
+                            <span>4 days</span>
+                            <span>February - April</span>
+                            <span class="price">From NOK 14,700</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-card" style="height: 500px;">
+                    <img src="bilder/finnmarksliv/nordlys.jpg" alt="Northern Lights" style="object-fit: cover; object-position: center center; height: 70%;">
+                    <div class="activity-content">
+                        <h3>Northern Lights Chase</h3>
+                        <p>Hunt for the aurora with expert guides</p>
+                        <div class="activity-details">
+                            <span>4.5-6 hours</span>
+                            <span>Sept 15 - April 10</span>
+                            <span class="price">From NOK 1,940</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="accommodation">
+            <h2>Where to Stay</h2>
+            <div class="accommodation-grid">
+                <div class="accommodation-card" style="margin-bottom: 40px;">
+                    <img src="bilder/finnmarksliv/telt.jpg" alt="glamping tent" style="object-fit: cover; object-position: center center; height: 700px; width: 100%;">
+                    <div class="accommodation-content">
+                        <h3>Aurora Canvas Dome</h3>
+                        <p>Sleep under the northern lights in our luxury domes</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Us</h4>
+                <p>Email: finnmarksliv@gmail.com</p>
+                <p>Phone: +47 XXX XX XXX</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=61554323031265" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/finnmarksliv" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Finnmarksliv AS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('fa-bars');
+                icon.classList.remove('fa-times');
+            });
+        });
+
+        function slideShow() {
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            setInterval(() => {
+                slides[currentSlide].classList.remove('active');
+                slides[currentSlide].classList.add('previous');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.remove('previous');
+                slides[currentSlide].classList.add('active');
+            }, 5000);
+        }
+
+        // Call the function when the page loads
+        window.addEventListener('load', slideShow);
+    </script>
+</body>
+</html> 
