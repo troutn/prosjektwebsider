@@ -1,0 +1,58 @@
+/* Copy Code Plugin Styles */
+.wp-block-code {
+    position: relative;
+}
+
+.copy-code-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: opacity 0.2s;
+    border: none;
+    background: #ffffff;
+    padding: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #1e1e1e;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wp-block-code:hover .copy-code-button {
+    opacity: 1;
+}
+
+.copy-code-button.clicked {
+    animation: pulse 0.3s;
+}
+
+.copy-code-button.copied {
+    color: #008a20;
+}
+
+/* New tooltip styles */
+.copy-tooltip {
+    position: absolute;
+    top: 8px;
+    right: 40px;
+    background: #1e1e1e;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    opacity: 0;
+    transform: translateX(10px);
+    transition: all 0.2s ease;
+}
+
+.copy-tooltip.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+} 
